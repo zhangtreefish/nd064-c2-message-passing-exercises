@@ -13,7 +13,7 @@ class App extends React.Component {
     }
 
     loadCustomers = () => {
-        fetch("http://localhost:5000/api/customers")
+        fetch("http://localhost:5001/customer-api/customers")
             .then(res => res.json())
             .then(
                 (result) => {
@@ -52,7 +52,7 @@ class App extends React.Component {
     }
 
     render() {
-        const {error, customers, employees} = this.state;
+        const { error, customers, employees } = this.state;
         if (error) {
             return <div>Error: {error.message}</div>;
         } else {
@@ -82,6 +82,6 @@ class App extends React.Component {
 }
 
 ReactDOM.render(
-    <App/>,
+    <App />,
     document.getElementById('root')
 );

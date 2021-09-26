@@ -12,10 +12,10 @@ The command should take a few minutes to run. This will create multiple Docker c
 
 For subsequent runs, you can run `docker-compose up` without the `--build` command.
 
-* The Flask application can be found at `http://localhost:5000`:
+* The Flask application can be found at:
     `http://localhost:5000/api/employees`
 
-    `http://localhost:5000/api/customers`
+    `http://localhost:5001/customer-api/customers`
 
 * The UI can be found at `http://localhost:3000`
 

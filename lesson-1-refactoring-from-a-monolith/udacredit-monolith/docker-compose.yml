@@ -12,6 +12,17 @@ services:
     ports:
       - "5000:5000"
 
+  customer-api:
+    build: customer-api
+    command: ["flask", "run", "--host=0.0.0.0"]
+    volumes:
+      - ./customer-api:/backend
+    environment:
+      - FLASK_ENV=development
+      - FLASK_APP=customer-api.py
+    ports:
+      - "5001:5000"
+
   client:
     tty: true
     build: client
@@ -25,6 +36,7 @@ services:
       - '3000:3000'
     depends_on:
       - api
+      - customer-api
 
 volumes:
   node-modules:
