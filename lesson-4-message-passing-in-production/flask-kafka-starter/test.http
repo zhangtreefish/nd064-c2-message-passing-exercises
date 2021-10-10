@@ -1,0 +1,12 @@
+POST http://127.0.0.1:5000/api/orders/computers HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": "1",
+    "status": "Queued",
+    "created_at": "2020-10-16T10:31:10.969696",
+    "created_by": "USER14",
+    "equipment": [
+        "MOUSE"
+    ]     }
+###

@@ -17,5 +17,6 @@ conda list
 python3 -m grpc_tools.protoc -I./ --python_out=./ --grpc_python_out=./ order.proto
 python3 main.py
 
-## References
-https://blog.dreamfactory.com/grpc-vs-rest-how-does-grpc-compare-with-traditional-rest-apis/
+## Referencesgrpc vs REST:
+gRPC vs REST: https://blog.dreamfactory.com/grpc-vs-rest-how-does-grpc-compare-with-traditional-rest-apis/
+example gRPC uptaking image and sending to REST: https://doordash.engineering/2020/10/16/building-an-image-upload-endpoint-in-a-grpc-and-kotlin/

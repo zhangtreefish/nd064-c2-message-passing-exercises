@@ -3,7 +3,7 @@ import json
 from kafka import KafkaProducer
 from flask import Flask, jsonify, request, g, Response
 
-from .services import retrieve_orders, create_order
+import services
 
 app = Flask(__name__)
 
@@ -17,7 +17,10 @@ def before_request():
     # in other parts of our application
     g.kafka_producer = producer
 
-
+"""
+@oas [get] /health
+description: "Helath check endpoint"
+"""
 @app.route('/health')
 def health():
     return jsonify({'response': 'Hello World!'})
@@ -26,10 +29,10 @@ def health():
 @app.route('/api/orders/computers', methods=['GET', 'POST'])
 def computers():
     if request.method == 'GET':
-        return jsonify(retrieve_orders())
+        return jsonify(services.retrieve_orders())
     elif request.method == 'POST':
         request_body = request.json
-        result = create_order(request_body)
+        result = services.create_order(request_body)
         return Response(status=202)
     else:
         raise Exception('Unsupported HTTP request type.')
